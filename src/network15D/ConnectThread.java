@@ -15,7 +15,7 @@ public class ConnectThread extends Thread{
 			serverSocket = new ServerSocket();
 			System.out.println("create server socket");
 			
-			serverSocket.bind(new InetSocketAddress("localhost",5001)); //바인드
+			serverSocket.bind(new InetSocketAddress("localhost",5001)); //바인드 : 아이피랑 코드 할당 하는 것 ->이를 마쳐야 통신이 가능한 상태
 			System.out.println("server bind");
 			
 			Socket cs = serverSocket.accept();	//클라이언트가 들어올때까지 대기할겁니다. 서버 소캣으로 accept해서 대기하는 상태, 이 소켓으로 
