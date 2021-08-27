@@ -6,7 +6,6 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -17,6 +16,7 @@ public class SServer extends Application{
 		// TODO Auto-generated method stub
 		VBox root = new VBox();
 		root.setPrefSize(400, 300);
+		TextArea textArea = new TextArea();
 		
 		Button btn1 = new Button("Start");
 		btn1.setOnAction(new EventHandler<ActionEvent>() {
@@ -29,20 +29,12 @@ public class SServer extends Application{
 			}
 		});
 		
-		TextArea textarea = new TextArea();
-		TextField text = new TextField();
-		text.setOnAction(new EventHandler<ActionEvent>() {
 
-			@Override
-			public void handle(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				
 
-			}
-		});
+
 
 		
-		root.getChildren().addAll(btn1, textarea);
+		root.getChildren().addAll(btn1, textArea);
 		
 		Scene scene = new Scene(root);
 		stage.setScene(scene);

@@ -38,6 +38,8 @@ public class CClient extends Application{
 				}
 			}
 		});
+		TextArea textarea = new TextArea();
+		TextField text = new TextField();
 		
 		Button btnn1 = new Button("Send");
 		btnn1.setOnAction(new EventHandler<ActionEvent>() {
@@ -63,22 +65,27 @@ public class CClient extends Application{
 		
 		
 		
-		TextArea textarea = new TextArea();
-		TextField text = new TextField();
 		text.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				OutputStream os = cs.getOutputStream();
-				String s = text.getText();
-				text.setText("");
-				byte[] data = s.getBytes("UTF-8");
-				os.write(data);
-				System.out.println("data sended");
+				
+				try {
+					OutputStream os = cs.getOutputStream();
+					String s = text.getText();
+					text.setText("");
+					byte[] data = s.getBytes("UTF-8");
+					os.write(data);
+					System.out.println("data sended");
+				} catch (Exception e) {
+					// TODO: handle exception
+					}
+				}
+					
 				
 				
-			}
+			
 		});
 		
 		

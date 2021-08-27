@@ -6,6 +6,8 @@ import java.net.Socket;
 
 public class CConnectThread extends Thread{
 
+
+	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
@@ -18,11 +20,11 @@ public class CConnectThread extends Thread{
 			serverSoket.bind(new InetSocketAddress("localhost",6666));
 			System.out.println("server bind");
 			
-			Socket cs = serverSocket.accept();
+//			Socket cs = serverSocket.accept();
 			System.out.println("Somebody connected");
 
-			ClientThread client = new ClientThread(cs, textarea);
-			client.start();
+//			ClientThread client = new ClientThread(cs, textarea);
+//			client.start();
 	
 		} catch (Exception e) {
 			// TODO: handle exception
